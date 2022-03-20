@@ -2,7 +2,8 @@ class WordsController < ApplicationController
   def home
     render json: {
       endpoints: [
-
+        'https://countdown-word-game-api.herokuapp.com/:word',
+        'https://countdown-word-game-api.herokuapp.com/solve/:letters'
       ]
     }
   end
