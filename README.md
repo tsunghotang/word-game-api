@@ -21,14 +21,14 @@ The query endpoint can be used to check if a word is valid. It works by matching
 ```
 https://countdown-word-game-api.herokuapp.com/hello
 
-returns:
-{ valid: true, word: word, length: word.length }
+<!-- returns -->
+{ "vali"d: true, "word": hello, "length": 5 }
 ```
 ```
 https://countdown-word-game-api.herokuapp.com/zzzz
 
-returns:
-{"valid":false,"word":"zzzz","error":"word not found"}
+<!-- returns -->
+{"valid":false, "word":"zzzz", "error":"word not found"}
 ```
 
 ### Solve endpoint
@@ -46,7 +46,10 @@ https://countdown-word-game-api.herokuapp.com/solve/EAUPTDMAD
 
 <!-- returns -->
 
-[{"word":"updated","length":7,"conumdrum":false},{"word":"adapted","length":7,"conumdrum":false}]
+[
+  {"word":"updated","length":7,"conumdrum":false},
+  {"word":"adapted","length":7,"conumdrum":false}
+]
 ```
 
 Passing the `varaiance` param will change the number of results returned. It represents the variance in the lenth of the possible solutions.
