@@ -76,4 +76,4 @@ https://countdown-word-game-api.herokuapp.com/solve/EAUPTDMAD?variance=1
 ```
 
 ## Word List
-The API uses the word list shared by dwyl found [here](https://github.com/dwyl/english-words)
+The API uses the word list shared by [dwyl](https://github.com/dwyl/english-words)
