@@ -1,24 +1,65 @@
-# README
+# Word game api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple API created to serve my [Countdown Rails App]().
+[label](http://example.com)
 
-Things you may want to cover:
+The API is hosted on heroku so initial load may take some time.
 
-* Ruby version
+---
 
-* System dependencies
+## Endpoints
+The API has two endpoints:
 
-* Configuration
+* Query -
+`https://countdown-word-game-api.herokuapp.com/:word`
 
-* Database creation
+* Solve - `https://countdown-word-game-api.herokuapp.com/solve/:letters`
 
-* Database initialization
+### Query endpoint
+`https://countdown-word-game-api.herokuapp.com/:word`
 
-* How to run the test suite
+The query endpoint can be used to check if a word is valid. It works by matching `:word` with this [word list](#word-list)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Example
+```
+https://countdown-word-game-api.herokuapp.com/hello
 
-* Deployment instructions
+returns:
+{ valid: true, word: word, length: word.length }
+```
+```
+https://countdown-word-game-api.herokuapp.com/zzzz
 
-* ...
+returns:
+{"valid":false,"word":"zzzz","error":"word not found"}
+```
+
+### Solve endpoint
+`https://countdown-word-game-api.herokuapp.com/:solve/`
+
+The Solve endpoint is used to solve anagrams.
+
+The api takes in a set of letters and returns words that can be made from the letters.
+
+By default the API returns the best possible words that can be made from the letters passed in.
+```
+https://countdown-word-game-api.herokuapp.com/solve/EAUPTDMAD
+
+<!-- returns -->
+
+[{"word":"updated","length":7,"conumdrum":false},{"word":"adapted","length":7,"conumdrum":false}]
+```
+
+Passing the `varaiance` param will change the number of results returned. It represents the variance in the lenth of the possible solutions.
+
+e.g. if the best solution has 7 characters and we have a variance of 2, the array will also include solutions of 5 and 6 characters. A variance of -1 will include all possible solutions. 0 will return only the best solutions.
+```
+https://countdown-word-game-api.herokuapp.com/solve/EAUPTDMAD?variance=1
+
+<!-- returns -->
+
+[{"word":"updated","length":7,"conumdrum":false},{"word":"temadau","length":7,"conumdrum":false},{"word":"adapted","length":7,"conumdrum":false},{"word":"update","length":6,"conumdrum":false},{"word":"tamped","length":6,"conumdrum":false},{"word":"tadema","length":6,"conumdrum":false},{"word":"pedata","length":6,"conumdrum":false},{"word":"maddeu","length":6,"conumdrum":false},{"word":"dumped","length":6,"conumdrum":false},{"word":"dauted","length":6,"conumdrum":false},{"word":"daudet","length":6,"conumdrum":false},{"word":"damped","length":6,"conumdrum":false},{"word":"amated","length":6,"conumdrum":false},{"word":"adempt","length":6,"conumdrum":false}]
+```
+---
+## Word List
+The API uses the word list shared by dwyl found [here](https://github.com/dwyl/english-words)

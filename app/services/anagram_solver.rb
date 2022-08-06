@@ -16,15 +16,13 @@ class AnagramSolver
 
   def valid_words
     $words.select do |word|
-      result = word.chars.all? do |letter|
+      word.chars.all? do |letter|
         word.count(letter) <= @letters.count(letter)
       end
-      word if result
     end
   end
 
   def filter_words(word_list)
     word_list.group_by(&:length).sort.to_h
   end
-
 end
