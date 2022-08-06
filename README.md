@@ -22,7 +22,7 @@ The query endpoint can be used to check if a word is valid. It works by matching
 https://countdown-word-game-api.herokuapp.com/hello
 
 <!-- returns -->
-{ "vali"d: true, "word": hello, "length": 5 }
+{ "valid": true, "word": hello, "length": 5 }
 ```
 ```
 https://countdown-word-game-api.herokuapp.com/zzzz
