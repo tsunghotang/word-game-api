@@ -51,8 +51,7 @@ https://countdown-word-game-api.herokuapp.com/solve/EAUPTDMAD
   {"word":"adapted","length":7,"conumdrum":false}
 ]
 ```
-
-Passing the `varaiance` param will change the number of results returned. It represents the variance in the lenth of the possible solutions.
+Passing the `varaiance` param will change the number of results returned. It represents the variance in the length of the possible solutions.
 
 e.g. if the best solution has 7 characters and we have a variance of 2, the array will also include solutions of 5 and 6 characters. A variance of -1 will include all possible solutions. 0 will return only the best solutions.
 ```
