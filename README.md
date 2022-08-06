@@ -1,11 +1,8 @@
 # Word game api
 
-Simple API created to serve my [Countdown Rails App]().
-[label](http://example.com)
+Simple API created to serve my [Countdown Rails App](https://github.com/tsunghotang/countdown-word-game).
 
 The API is hosted on heroku so initial load may take some time.
-
----
 
 ## Endpoints
 The API has two endpoints:
@@ -20,7 +17,7 @@ The API has two endpoints:
 
 The query endpoint can be used to check if a word is valid. It works by matching `:word` with this [word list](#word-list)
 
-### Example
+#### Example
 ```
 https://countdown-word-game-api.herokuapp.com/hello
 
@@ -42,6 +39,8 @@ The Solve endpoint is used to solve anagrams.
 The api takes in a set of letters and returns words that can be made from the letters.
 
 By default the API returns the best possible words that can be made from the letters passed in.
+
+#### Example
 ```
 https://countdown-word-game-api.herokuapp.com/solve/EAUPTDMAD
 
@@ -58,8 +57,23 @@ https://countdown-word-game-api.herokuapp.com/solve/EAUPTDMAD?variance=1
 
 <!-- returns -->
 
-[{"word":"updated","length":7,"conumdrum":false},{"word":"temadau","length":7,"conumdrum":false},{"word":"adapted","length":7,"conumdrum":false},{"word":"update","length":6,"conumdrum":false},{"word":"tamped","length":6,"conumdrum":false},{"word":"tadema","length":6,"conumdrum":false},{"word":"pedata","length":6,"conumdrum":false},{"word":"maddeu","length":6,"conumdrum":false},{"word":"dumped","length":6,"conumdrum":false},{"word":"dauted","length":6,"conumdrum":false},{"word":"daudet","length":6,"conumdrum":false},{"word":"damped","length":6,"conumdrum":false},{"word":"amated","length":6,"conumdrum":false},{"word":"adempt","length":6,"conumdrum":false}]
+[
+  {"word":"updated","length":7,"conumdrum":false},
+  {"word":"temadau","length":7,"conumdrum":false},
+  {"word":"adapted","length":7,"conumdrum":false},
+  {"word":"update","length":6,"conumdrum":false},
+  {"word":"tamped","length":6,"conumdrum":false},
+  {"word":"tadema","length":6,"conumdrum":false},
+  {"word":"pedata","length":6,"conumdrum":false},
+  {"word":"maddeu","length":6,"conumdrum":false},
+  {"word":"dumped","length":6,"conumdrum":false},
+  {"word":"dauted","length":6,"conumdrum":false},
+  {"word":"daudet","length":6,"conumdrum":false},
+  {"word":"damped","length":6,"conumdrum":false},
+  {"word":"amated","length":6,"conumdrum":false},
+  {"word":"adempt","length":6,"conumdrum":false}
+]
 ```
----
+
 ## Word List
 The API uses the word list shared by dwyl found [here](https://github.com/dwyl/english-words)
